@@ -1,0 +1,12 @@
+---
+title: "About"
+---
+
+# Authors
+
+<!-- to be removed -->
+{{< include authors/template.qmd >}}
+
+----
+
+{{< include authors/pr.qmd >}}

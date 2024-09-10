@@ -1,0 +1,28 @@
+Package: phuse_sde_2024
+Type: Book
+Title: Pharmaverse Examples
+Version: 0.1
+Authors@R:
+    person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"), comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This is not a package, but we just use this file to declare
+    the dependencies of the site.
+URL: https://github.com/pharmaverse/phuse-sde-2024
+Imports:
+    dplyr,
+    nestcolor,
+    random.cdisc.data,
+    roxy.shinylive,
+    sparkline,
+    teal,
+    teal.modules.clinical,
+    teal.modules.general,
+    teal.reporter,
+    teal.transform,
+    teal.widgets,
+    tern
+Suggests:
+    knitr,
+    rmarkdown
+Remotes:
+    insightsengineering/roxy.shinylive@init
+Encoding: UTF-8

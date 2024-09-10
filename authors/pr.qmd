@@ -1,0 +1,25 @@
+---
+about:
+  template: jolla
+---
+
+![](assets/images/pr.jpg){width=10em class="rounded-circle"}
+
+## Pawel Rucki
+
+Pawel is the Chief Engineer at Roche responsible for one of the biggest R codebase in Product Development. He graduated in 2015 from University of Warsaw, Econometrics and Quantitative Economics. Working with R for almost 10 years now, Pawel applied it in the field of geospatial data analysis, credit risk assessment, financial provisions calculation and clinical trial data analysis.
+
+```{=html}
+<hr class="about-sep" style="display: inline-flex;">
+<br>
+<div class="about-links" style="display: inline-flex;">
+  <a href="https://www.linkedin.com/in/pawel-rucki/" class="about-link">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">Linkedin</span>
+  </a>
+  <a href="https://github.com/pawelru/" class="about-link">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+</div>
+```

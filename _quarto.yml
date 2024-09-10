@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  title: "phuse-sde-2024"
+  site-url: https://pharmaverse.github.io/examples/
+  repo-url: https://github.com/pharmaverse/examples
+  repo-branch: main
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: exercise_1.qmd
+        text: Exercise 1
+      - href: exercise_2.qmd
+        text: Exercise 2
+      - href: exercise_3.qmd
+        text: Exercise 3
+      - href: exercise_4.qmd
+        text: Exercise 4
+      - about.qmd
+    right:
+      - icon: github
+        href: https://github.com/pharmaverse/phuse-sde-2024
+        aria-label: GitHub
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
