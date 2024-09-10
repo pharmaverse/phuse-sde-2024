@@ -3,7 +3,7 @@ about:
   template: jolla
 ---
 
-![](assets/images/pr.jpg){width=10em class="rounded-circle"}
+![](../assets/images/pr.jpg){width=10em class="rounded-circle"}
 
 ## Pawel Rucki
 
