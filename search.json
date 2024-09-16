@@ -4,14 +4,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github\n  \n\n\n\n\n\n\nPawel is the Chief Engineer at Roche responsible for one of the biggest R codebase in Product Development. He graduated in 2015 from University of Warsaw, Econometrics and Quantitative Economics. Working with R for almost 10 years now, Pawel applied it in the field of geospatial data analysis, credit risk assessment, financial provisions calculation and clinical trial data analysis.\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github"
+    "text": "Tadeusz joind J&J in 2022 as a Data Engineering Head amd from 2023 is also leading the Open Source group.\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github\n  \n\n\n\n\n\n\nPawel is the Chief Engineer at Roche responsible for one of the biggest R codebase in Product Development. He graduated in 2015 from University of Warsaw, Econometrics and Quantitative Economics. Working with R for almost 10 years now, Pawel applied it in the field of geospatial data analysis, credit risk assessment, financial provisions calculation and clinical trial data analysis.\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github"
   },
   {
-    "objectID": "about.html#john-doe",
-    "href": "about.html#john-doe",
+    "objectID": "about.html#tadeusz-lewandowski",
+    "href": "about.html#tadeusz-lewandowski",
     "title": "About",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github"
+    "text": "Tadeusz joind J&J in 2022 as a Data Engineering Head amd from 2023 is also leading the Open Source group.\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github"
   },
   {
     "objectID": "about.html#pawel-rucki",
@@ -21,11 +21,11 @@
     "text": "Pawel is the Chief Engineer at Roche responsible for one of the biggest R codebase in Product Development. He graduated in 2015 from University of Warsaw, Econometrics and Quantitative Economics. Working with R for almost 10 years now, Pawel applied it in the field of geospatial data analysis, credit risk assessment, financial provisions calculation and clinical trial data analysis.\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github"
   },
   {
-    "objectID": "authors/tl.html#tadeusz-lewandowski-joind-jj-in-2022-as-a-data-engineering-head-amd-from-2023-is-also-leading-the-open-source-group",
-    "href": "authors/tl.html#tadeusz-lewandowski-joind-jj-in-2022-as-a-data-engineering-head-amd-from-2023-is-also-leading-the-open-source-group",
+    "objectID": "authors/tl.html#tadeusz-lewandowski",
+    "href": "authors/tl.html#tadeusz-lewandowski",
     "title": "phuse-sde-2024",
-    "section": "Tadeusz Lewandowski joind J&J in 2022 as a Data Engineering Head amd from 2023 is also leading the Open Source group",
-    "text": "Tadeusz Lewandowski joind J&J in 2022 as a Data Engineering Head amd from 2023 is also leading the Open Source group\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github"
+    "section": "Tadeusz Lewandowski",
+    "text": "Tadeusz Lewandowski\nTadeusz joind J&J in 2022 as a Data Engineering Head amd from 2023 is also leading the Open Source group.\n\n\n\n  \n    \n     Linkedin\n  \n  \n    \n     Github"
   },
   {
     "objectID": "exercise_1.html",
@@ -39,7 +39,7 @@
     "href": "exercise_2.html",
     "title": "Exercise 2",
     "section": "",
-    "text": "Code\n\nlibrary(dplyr)\nlibrary(random.cdisc.data)\nlibrary(nestcolor)\nlibrary(teal.modules.general)\nlibrary(teal.modules.clinical)\n# optional libraries\nlibrary(sparkline)\n\n## Data reproducible code ----\ndata &lt;- teal_data()\ndata &lt;- within(data, {\n  ADSL &lt;- radsl(seed = 1)\n  adsl_labels &lt;- col_labels(ADSL, fill = FALSE)\n\n  char_vars_asl &lt;- names(Filter(isTRUE, sapply(ADSL, is.character)))\n})\n# set datanames\ndatanames &lt;- c(\"ADSL\")\ndatanames(data) &lt;- datanames\n# set join_keys\njoin_keys(data) &lt;- default_cdisc_join_keys[datanames]\n\n\n## Reusable Configuration For Modules\nADSL &lt;- data[[\"ADSL\"]]\n\narm_vars &lt;- c(\"ARMCD\", \"ARM\")\n\ncs_arm_var &lt;- choices_selected(\n  choices = variable_choices(ADSL, subset = arm_vars),\n  selected = \"ARM\"\n)\n\n\ndate_vars_asl &lt;- names(ADSL)[vapply(ADSL, function(x) inherits(x, c(\"Date\", \"POSIXct\", \"POSIXlt\")), logical(1))]\ndemog_vars_asl &lt;- names(ADSL)[!(names(ADSL) %in% c(\"USUBJID\", \"STUDYID\", date_vars_asl))]\n\n\nheader &lt;- tags$span(\n  style = \"display: flex; align-items: center; justify-content: space-between; margin: 10px 0 10px 0;\",\n  tags$span(\"Exercise 1\", style = \"font-size: 30px;\"),\n)\n\nfooter &lt;- tags$p(\n  \"This teal app is brought to you by PhUSE SDE Basel\",\n)\n\n\napp &lt;- init(\n  data = data,\n  modules = modules(\n    tm_front_page(\n      label = \"App Info\",\n      header_text = c(\n        \"Info about input data source\" =\n          \"This app uses CDISC ADaM datasets randomly generated by `random.cdisc.data` R packages\"\n      ),\n      tables = list(`NEST packages used in this demo app` = data.frame(\n        Packages = c(\"teal.modules.general\", \"teal.modules.clinical\", \"random.cdisc.data\")\n      ))\n    ),\n    tm_data_table(\"Data Table\"),\n    tm_t_summary(\n      label = \"Demographic Table\",\n      dataname = \"ADSL\",\n      arm_var = cs_arm_var,\n      summarize_vars = choices_selected(\n        choices = variable_choices(ADSL, demog_vars_asl),\n        selected = c(\"SEX\", \"AGE\", \"RACE\")\n      )\n    )\n  ),\n  title = build_app_title(\"Basic Teal Demo App\"),\n  header = header,\n  footer = footer\n)\n\n[INFO] 2024-09-16 10:34:53.6986 pid:6004 token:[] teal.modules.general Initializing tm_front_page\n[INFO] 2024-09-16 10:34:53.7012 pid:6004 token:[] teal.modules.general Initializing tm_data_table\n\nif (Sys.getenv(\"QUARTO_ROOT\") == \"\") {\n  shinyApp(app$ui, app$server)\n}\n\n\n\nURL\nOpen in Shinylive\n\n\nApp"
+    "text": "Code\n\nlibrary(dplyr)\nlibrary(random.cdisc.data)\nlibrary(nestcolor)\nlibrary(teal.modules.general)\nlibrary(teal.modules.clinical)\n# optional libraries\nlibrary(sparkline)\n\n## Data reproducible code ----\ndata &lt;- teal_data()\ndata &lt;- within(data, {\n  ADSL &lt;- radsl(seed = 1)\n  adsl_labels &lt;- col_labels(ADSL, fill = FALSE)\n\n  char_vars_asl &lt;- names(Filter(isTRUE, sapply(ADSL, is.character)))\n})\n# set datanames\ndatanames &lt;- c(\"ADSL\")\ndatanames(data) &lt;- datanames\n# set join_keys\njoin_keys(data) &lt;- default_cdisc_join_keys[datanames]\n\n\n## Reusable Configuration For Modules\nADSL &lt;- data[[\"ADSL\"]]\n\narm_vars &lt;- c(\"ARMCD\", \"ARM\")\n\ncs_arm_var &lt;- choices_selected(\n  choices = variable_choices(ADSL, subset = arm_vars),\n  selected = \"ARM\"\n)\n\n\ndate_vars_asl &lt;- names(ADSL)[vapply(ADSL, function(x) inherits(x, c(\"Date\", \"POSIXct\", \"POSIXlt\")), logical(1))]\ndemog_vars_asl &lt;- names(ADSL)[!(names(ADSL) %in% c(\"USUBJID\", \"STUDYID\", date_vars_asl))]\n\n\nheader &lt;- tags$span(\n  style = \"display: flex; align-items: center; justify-content: space-between; margin: 10px 0 10px 0;\",\n  tags$span(\"Exercise 1\", style = \"font-size: 30px;\"),\n)\n\nfooter &lt;- tags$p(\n  \"This teal app is brought to you by PhUSE SDE Basel\",\n)\n\n\napp &lt;- init(\n  data = data,\n  modules = modules(\n    tm_front_page(\n      label = \"App Info\",\n      header_text = c(\n        \"Info about input data source\" =\n          \"This app uses CDISC ADaM datasets randomly generated by `random.cdisc.data` R packages\"\n      ),\n      tables = list(`NEST packages used in this demo app` = data.frame(\n        Packages = c(\"teal.modules.general\", \"teal.modules.clinical\", \"random.cdisc.data\")\n      ))\n    ),\n    tm_data_table(\"Data Table\"),\n    tm_t_summary(\n      label = \"Demographic Table\",\n      dataname = \"ADSL\",\n      arm_var = cs_arm_var,\n      summarize_vars = choices_selected(\n        choices = variable_choices(ADSL, demog_vars_asl),\n        selected = c(\"SEX\", \"AGE\", \"RACE\")\n      )\n    )\n  ),\n  title = build_app_title(\"Basic Teal Demo App\"),\n  header = header,\n  footer = footer\n)\n\n[INFO] 2024-09-16 10:44:15.2983 pid:5957 token:[] teal.modules.general Initializing tm_front_page\n[INFO] 2024-09-16 10:44:15.3005 pid:5957 token:[] teal.modules.general Initializing tm_data_table\n\nif (Sys.getenv(\"QUARTO_ROOT\") == \"\") {\n  shinyApp(app$ui, app$server)\n}\n\n\n\nURL\nOpen in Shinylive\n\n\nApp"
   },
   {
     "objectID": "exercise_3.html",
@@ -68,6 +68,20 @@
     "title": "phuse-sde-2024",
     "section": "Agenda",
     "text": "Agenda\nTODO"
+  },
+  {
+    "objectID": "index.html#packages-used",
+    "href": "index.html#packages-used",
+    "title": "phuse-sde-2024",
+    "section": "Packages used:",
+    "text": "Packages used:\n teal - Shiny-based interactive exploration framework for analyzing data\n tern - Table, Listings, and Graphs (TLG) library for common outputs used in clinical trials\n rtables - Reporting tables with R\nrandom.cdisc.data - Create random CDISC data\nteal.modules.general - General Purpose Teal Modules\nteal.modules.clinical - Provides teal modules for the standard clinical trials outputs"
+  },
+  {
+    "objectID": "index.html#further-reads",
+    "href": "index.html#further-reads",
+    "title": "phuse-sde-2024",
+    "section": "Further reads:",
+    "text": "Further reads:\n\nGetting started with teal\nteal Technical Blueprint - for developers or advanced users\nteal gallery - A gallery of sample apps based on the teal framework.\nTLG Catalog - A catalog of Tables, Listings and Graphs (TLGs) created with NEST R packages\npharmaverse - Packages for clinical reporting workflows"
   },
   {
     "objectID": "authors/template.html#john-doe",
