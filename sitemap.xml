@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pharmaverse.github.io/examples/about.html</loc>
-    <lastmod>2024-09-16T10:42:51.301Z</lastmod>
+    <lastmod>2024-09-16T12:49:40.956Z</lastmod>
   </url>
   <url>
     <loc>https://pharmaverse.github.io/examples/authors/tl.html</loc>
-    <lastmod>2024-09-16T10:42:51.301Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/exercise_1.html</loc>
-    <lastmod>2024-09-16T10:42:51.301Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/exercise_2.html</loc>
-    <lastmod>2024-09-16T10:42:51.305Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/exercise_3.html</loc>
-    <lastmod>2024-09-16T10:42:51.305Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/exercise_4.html</loc>
-    <lastmod>2024-09-16T10:42:51.305Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/index.html</loc>
-    <lastmod>2024-09-16T10:42:51.305Z</lastmod>
+    <lastmod>2024-09-16T12:49:40.956Z</lastmod>
   </url>
   <url>
     <loc>https://pharmaverse.github.io/examples/authors/template.html</loc>
-    <lastmod>2024-09-16T10:42:51.301Z</lastmod>
+    <lastmod>2024-09-16T12:49:40.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/index.html</loc>
+    <lastmod>2024-09-16T12:49:40.960Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/exercise_4.html</loc>
+    <lastmod>2024-09-16T12:49:40.960Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/exercise_3.html</loc>
+    <lastmod>2024-09-16T12:49:40.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/exercise_2.html</loc>
+    <lastmod>2024-09-16T12:49:40.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/exercise_1.html</loc>
+    <lastmod>2024-09-16T12:49:40.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/authors/kt.html</loc>
+    <lastmod>2024-09-16T12:49:40.956Z</lastmod>
   </url>
   <url>
     <loc>https://pharmaverse.github.io/examples/authors/pr.html</loc>
-    <lastmod>2024-09-16T10:42:51.301Z</lastmod>
+    <lastmod>2024-09-16T12:49:40.956Z</lastmod>
   </url>
 </urlset>
