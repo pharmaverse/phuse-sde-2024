@@ -197,6 +197,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>Create your first <code>teal</code> application!</p>
+<ul>
+<li>read <a href="https://insightsengineering.github.io/teal/latest-tag/reference/init.html"><code>teal::init()</code></a> documentation</li>
+<li>use <a href="https://insightsengineering.github.io/random.cdisc.data/main/reference/radsl.html"><code>random.cdisc.data::radsl(cached = TRUE)</code></a> to create a dummy ADSL dataset</li>
+<li>use <a href="https://insightsengineering.github.io/teal/latest-tag/reference/example_module.html"><code>teal::example_module()</code></a> to create a dummy module</li>
+</ul>
 <section id="code" class="level3">
 <h3 class="anchored" data-anchor-id="code">Code</h3>
 <div class="cell">
@@ -205,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">teal_data</span>()</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">within</span>(data, {</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  ADSL <span class="ot">&lt;-</span> <span class="fu">radsl</span>(<span class="at">seed =</span> <span class="dv">1</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  ADSL <span class="ot">&lt;-</span> <span class="fu">radsl</span>(<span class="at">cached =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set datanames</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>datanames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ADSL"</span>)</span>
@@ -240,12 +246,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="url" class="level3">
 <h3 class="anchored" data-anchor-id="url">URL</h3>
-<p><a href="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKZiAEyJgwLdaAZwIZuUUlACUAHQh0mLDuSjU5EeRKkACADwBaHauoB9bVHYaL+owHdapABa0I7C7h0h5OnQEEAEQBlABlbHWZuYWp2YTg4bh0AXh0ARg0AXw0AYh040h0LaHhhLUkoYrhhcIJ2WTBA0Prrcsrhd3LpcKLYKvl5bNysOABXYSh6ajgdAGESADNaAHMR5lJaEh0AMSJGHQBZIm4RqdKIRrDDQvLgYHqL+oBdR-6IJzgobjg9q6kl4QAJMJUBU6hBfMJSKwpskdPUhMDqFBWIgdPMpgAPADcOjUywgBkccBgwlRBAo5EYOIAVmN1vNWAZiGQKajgVByQZ6HBSHZ4hAcTAWEtXKjUgAGVAYnTitKS6XirH1XA+YxQf5AkFueoAUQx5MYBBE01SyryUJhKXq8xIpAMwloAC84KiAMzypVgaQqiAaeQ2oiU8J-QGoMG+eoAFRc1RMuPQOhEOiYRBGSycBVIRB0rFTydYOgACk4AKpBHU6IIBCsAISgcWoGHq8j90ATV1cjnD110KQ8qpgRxOVVhg+Op27vjgGNgqCmpjHw6squ9qvWpEtyZGtGo3FMaFQpnXUzqYDrDoIOkjH2oOgCxOzfnQzR9vnen2+sPfX0Yr7RREDT8UgDSkW1eWh5h0dgglYYQMCWHkKAAN1PABFEs-CwSMAHlTCwbDsMjZpkitMBiO8cE8hcCBWCfMMDwBbdPAYuJGCQ75MjADJHiAA">Open in Shinylive</a></p>
+<p><a href="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKZiAEyJgwLdaAZwIZuUUlACUAHQh0mLDuSjU5EeRKkACADwBaHauoB9bVHYaL+owHdapABa0I7C7h0h5OnQEEAEQBlABlbHWZuYWp2AigCJzhuHQBeHQAVLABVAFENAF8NAGIdYThSHQtoeGEtSShquGFwgnZZMEDQ9ut6xuF3eulwqtgm+Xkikqw4AFdhKHpqOB0AYRIAM1oAcxnmUloSHQAxIkYdAFkibhml2ohOsMNK+uBgdof2gF1P8YhEqG4cDOTykW2EABJhKgGm0IL5hKRWEtUjp2kIodQoKxEDp1ksAB4Abh0am2EAMjjgMGEOIIFHIjGJACs5vt1qwDMQyPScVD4nADPRynY4BRiTAWFtXDiAIwABlQ+J0cp08sVysJ7VwPmMUDBkOhbnaOXxdMYBBEyxlWtKiORaXa6xIpAMwloAC84DiAMwKondbUQDTyJ1EBnhUEQ1Cw3ztdIuZomEnoHQiHRMIgzLZOCqkIg6ViZ9OsHQABScWSCOR0QQC1YAQlAytQMO15MHoCmnq5HDHnro0h4dTArjcmiiR9dbn3fHB8bBUEtTJOx1YddJA759qR7emZrRqNxTGhUKZt0s2mBG26CBk4GodAEqfm-OgAzr-oCzmlP0DN7iiDDIEUVDBl21+Wh1h0dgglYYQMC2coKAAN0vABFLI-CwdIAHlTCwHCcPSbpUgdMASO8OFShcCBWFfaMT3BfdPEYspGGQoECjAfJPiAA">Open in Shinylive</a></p>
 </section>
 <section id="app" class="level3">
 <h3 class="anchored" data-anchor-id="app">App</h3>
 <div class="cell">
-<iframe src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKZiAEyJgwLdaAZwIZuUUlACUAHQh0mLDuSjU5EeRKkACADwBaHauoB9bVHYaL+owHdapABa0I7C7h0h5OnQEEAEQBlABlbHWZuYWp2YTg4bh0AXh0ARg0AXw0AYh040h0LaHhhLUkoYrhhcIJ2WTBA0Prrcsrhd3LpcKLYKvl5bNysOABXYSh6ajgdAGESADNaAHMR5lJaEh0AMSJGHQBZIm4RqdKIRrDDQvLgYHqL+oBdR-6IJzgobjg9q6kl4QAJMJUBU6hBfMJSKwpskdPUhMDqFBWIgdPMpgAPADcOjUywgBkccBgwlRBAo5EYOIAVmN1vNWAZiGQKajgVByQZ6HBSHZ4hAcTAWEtXKjUgAGVAYnTitKS6XirH1XA+YxQf5AkFueoAUQx5MYBBE01SyryUJhKXq8xIpAMwloAC84KiAMzypVgaQqiAaeQ2oiU8J-QGoMG+eoAFRc1RMuPQOhEOiYRBGSycBVIRB0rFTydYOgACk4AKpBHU6IIBCsAISgcWoGHq8j90ATV1cjnD110KQ8qpgRxOVVhg+Op27vjgGNgqCmpjHw6squ9qvWpEtyZGtGo3FMaFQpnXUzqYDrDoIOkjH2oOgCxOzfnQzR9vnen2+sPfX0Yr7RREDT8UgDSkW1eWh5h0dgglYYQMCWHkKAAN1PABFEs-CwSMAHlTCwbDsMjZpkitMBiO8cE8hcCBWCfMMDwBbdPAYuJGCQ75MjADJHiAA" width="150%" height="800px" data-external="1">
+<iframe src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKZiAEyJgwLdaAZwIZuUUlACUAHQh0mLDuSjU5EeRKkACADwBaHauoB9bVHYaL+owHdapABa0I7C7h0h5OnQEEAEQBlABlbHWZuYWp2AigCJzhuHQBeHQAVLABVAFENAF8NAGIdYThSHQtoeGEtSShquGFwgnZZMEDQ9ut6xuF3eulwqtgm+Xkikqw4AFdhKHpqOB0AYRIAM1oAcxnmUloSHQAxIkYdAFkibhml2ohOsMNK+uBgdof2gF1P8YhEqG4cDOTykW2EABJhKgGm0IL5hKRWEtUjp2kIodQoKxEDp1ksAB4Abh0am2EAMjjgMGEOIIFHIjGJACs5vt1qwDMQyPScVD4nADPRynY4BRiTAWFtXDiAIwABlQ+J0cp08sVysJ7VwPmMUDBkOhbnaOXxdMYBBEyxlWtKiORaXa6xIpAMwloAC84DiAMwKondbUQDTyJ1EBnhUEQ1Cw3ztdIuZomEnoHQiHRMIgzLZOCqkIg6ViZ9OsHQABScWSCOR0QQC1YAQlAytQMO15MHoCmnq5HDHnro0h4dTArjcmiiR9dbn3fHB8bBUEtTJOx1YddJA759qR7emZrRqNxTGhUKZt0s2mBG26CBk4GodAEqfm-OgAzr-oCzmlP0DN7iiDDIEUVDBl21+Wh1h0dgglYYQMC2coKAAN0vABFLI-CwdIAHlTCwHCcPSbpUgdMASO8OFShcCBWFfaMT3BfdPEYspGGQoECjAfJPiAA" width="150%" height="800px" data-external="1">
 </iframe>
 </div>
 
