@@ -2,6 +2,13 @@
 title: "Exercise 4"
 ---
 
+Further enhance your custom module by reproducibility and reporter feature!
+
+- read [`"qenv"`](https://insightsengineering.github.io/teal.code/latest-tag/articles/qenv.html) article on how to interact with internal `qenv` object - in particular: [`teal.code::get_code()`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html) function
+- read ["Getting started with teal.reporter"](https://insightsengineering.github.io/teal.reporter/latest-tag/articles/teal-reporter.html) vignette to get to know how to implement reporter
+  - add `reporter` and `filter_panel_api` to the list of arguments of module server function
+  - use [`teal.reporter::simple_reporter_srv()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/simple_reporter.html) module and create a report a custom card function using [`teal::TealReportCard`](https://insightsengineering.github.io/teal/latest-tag/reference/TealReportCard.html) class methods
+
 ### Code
 
 ```{r ex, message = FALSE}
@@ -12,8 +19,6 @@ library(teal.transform)
 library(teal.widgets)
 library(tern)
 library(dplyr)
-library(sparkline)
-library(nestcolor)
 
 modules <- list(
   module(
@@ -53,7 +58,6 @@ modules <- list(
                 s_summary <- my_summary
                 summary_lyt <- basic_table() %>%
                   split_cols_by(var = "ARM") %>%
-                  analyze(c("AGE"), afun = s_summary) %>%
                   analyze(param, afun = s_summary)
                 summary_tbl <- build_table(summary_lyt, ADSL)
                 summary_tbl
@@ -68,23 +72,38 @@ modules <- list(
         })
 
         # ----------
+        # reproducibility
+        # ----------
+        observeEvent(input$src, {
+          showModal(
+            ui = modalDialog(
+              title = "Reproducible R code",
+              tags$pre(
+                get_code(table_q())
+              )
+            ),
+            session = session
+          )
+        })
+
+        # ----------
         # reporter
         # ----------
         simple_reporter_srv(
           "simple_reporter",
           reporter = reporter,
-        card_fun = function(card = TealReportCard$new(), comment) {
-          card$set_name("Patient demographics")
-          card$append_text(toString(table_q()[["summary_tbl"]]), "verbatim")
-          card$append_fs(filter_panel_api$get_filter_state())
-          card$append_encodings(list(param = input$param))
-          if (!comment == "") {
-            card$append_text("Comment", "header3")
-            card$append_text(comment)
+          card_fun = function(card = TealReportCard$new(), comment) {
+            card$set_name("Patient demographics")
+            card$append_text(toString(table_q()[["summary_tbl"]]), "verbatim")
+            card$append_fs(filter_panel_api$get_filter_state())
+            card$append_encodings(list(param = input$param))
+            if (!comment == "") {
+              card$append_text("Comment", "header3")
+              card$append_text(comment)
+            }
+            card$append_src(get_code(table_q()))
+            card
           }
-          card$append_src(get_code(table_q()))
-          card
-        }
         )
 
       })
@@ -111,6 +130,12 @@ modules <- list(
             choices = NULL,
             selected = NULL,
             multiple = TRUE
+          ),
+          hr(),
+          actionButton(
+            inputId = ns("src"),
+            label = "Show R code",
+            width = "100%"
           )
         )
       )

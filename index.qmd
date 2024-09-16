@@ -4,10 +4,6 @@ title: "phuse-sde-2024"
 
 Welcome in the PHUSE Single Day Event!
 
-## Agenda
-
-TODO
-
 ## Packages used:
 
 [![](https://github.com/insightsengineering/hex-stickers/blob/main/PNG/teal.png?raw=true){width=150}](https://insightsengineering.github.io/teal/)

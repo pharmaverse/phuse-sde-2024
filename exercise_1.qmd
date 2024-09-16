@@ -2,6 +2,12 @@
 title: "Exercise 1"
 ---
 
+Create your first `teal` application!
+
+- read [`teal::init()`](https://insightsengineering.github.io/teal/latest-tag/reference/init.html) documentation
+- use [`random.cdisc.data::radsl(cached = TRUE)`](https://insightsengineering.github.io/random.cdisc.data/main/reference/radsl.html) to create a dummy ADSL dataset
+- use [`teal::example_module()`](https://insightsengineering.github.io/teal/latest-tag/reference/example_module.html) to create a dummy module
+
 ### Code
 
 ```{r ex, message = FALSE}
@@ -10,7 +16,7 @@ library(teal)
 
 data <- teal_data()
 data <- within(data, {
-  ADSL <- radsl(seed = 1)
+  ADSL <- radsl(cached = TRUE)
 })
 # set datanames
 datanames <- c("ADSL")

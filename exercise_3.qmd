@@ -2,6 +2,14 @@
 title: "Exercise 3"
 ---
 
+Create your custom module!
+
+Create a custom module that does a simple demographic summary table on user specified columns.
+
+- read [`teal::module()`](https://insightsengineering.github.io/teal/latest-tag/reference/teal_modules.html) documentation
+- read ["Creating Custom Modules"](https://insightsengineering.github.io/teal/latest-tag/articles/creating-custom-modules.html) vignette
+- read [`"qenv"`](https://insightsengineering.github.io/teal.code/latest-tag/articles/qenv.html) article on how to interact with internal `qenv` object - in particular: [`teal.code::within()`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html) function
+
 ### Code
 
 ```{r ex, message = FALSE}
@@ -11,13 +19,11 @@ library(teal.transform)
 library(teal.widgets)
 library(tern)
 library(dplyr)
-library(sparkline)
-library(nestcolor)
 
 modules <- list(
   module(
     label = "Adhoc module",
-    server = function(id, data, reporter, filter_panel_api){
+    server = function(id, data){
       moduleServer(id, function(input, output, session){
         s_summary <- function(x) {
           if (is.numeric(x)) {
@@ -52,7 +58,6 @@ modules <- list(
                 s_summary <- my_summary
                 summary_lyt <- basic_table() %>%
                   split_cols_by(var = "ARM") %>%
-                  analyze(c("AGE"), afun = s_summary) %>%
                   analyze(param, afun = s_summary)
                 summary_tbl <- build_table(summary_lyt, ADSL)
                 summary_tbl
@@ -66,7 +71,6 @@ modules <- list(
           renderPrint(table_q()[["summary_tbl"]])
         })
 
-
       })
     },
     ui = function(id) {
@@ -74,11 +78,13 @@ modules <- list(
 
       standard_layout(
         output = div(
-          fluidRow(column(
-            width = 12,
-            br(), hr(),
-            uiOutput(ns("table"))
-          ))
+          fluidRow(
+            column(
+              width = 12,
+              br(), hr(),
+              uiOutput(ns("table"))
+            )
+          )
         ),
         encoding = div(
           br(),
