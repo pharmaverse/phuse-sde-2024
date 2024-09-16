@@ -9,3 +9,7 @@ title: "About"
 ----
 
 {{< include authors/pr.qmd >}}
+
+----
+
+{{< include authors/kt.qmd >}}
