@@ -17,3 +17,8 @@ title: "About"
 ----
 
 {{< include authors/pe.qmd >}}
+
+
+----
+
+{{< include authors/la.qmd >}}

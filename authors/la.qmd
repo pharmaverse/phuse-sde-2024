@@ -1,0 +1,25 @@
+---
+about:
+  template: jolla
+---
+
+![](/assets/images/la.png){width=10em class="rounded-circle"}
+
+## Lars Andersen
+
+Lars is a TAM Statistician at Boehringer Ingelheim mostly focusing on Software Engineering tasks. He joined Boehringer Ingelheim in 2022 and works a lot on R Shiny, Simulations and Bayesian Statistics.
+
+```{=html}
+<hr class="about-sep" style="display: inline-flex;">
+<br>
+<div class="about-links" style="display: inline-flex;">
+  <a href="https://www.linkedin.com/in/pawel-rucki/" class="about-link">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">Linkedin</span>
+  </a>
+  <a href="https://github.com/pawelru/" class="about-link">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+</div>
+```
