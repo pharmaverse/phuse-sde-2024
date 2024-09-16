@@ -1,19 +1,3 @@
----
-title: "Exercise 2"
----
-
-Enhance your application with pre-built modules!
-
-- use [`teal.modules.general::tm_front_page()`](https://insightsengineering.github.io/teal.modules.general/latest-tag/reference/tm_front_page.html) to create the first "welcome screen" of the application
-- use [`teal.modules.general::tm_data_table()`](https://insightsengineering.github.io/teal.modules.general/latest-tag/reference/tm_data_table.html) to create a data previewer module
-- use [`teal.modules.clinical::tm_t_summary()`](https://insightsengineering.github.io/teal.modules.clinical/latest-tag/reference/tm_t_summary.html) to create a demographic summary table:
-  - please read the documentation - especially `arm_var` and `summarize_vars` argument and what data type it takes
-  - use both `"ARM"` and `"ARMCD"` as `arm_var`
-  - use `"SEX"`, `"AGE"` and `"RACE"` as `summarize_vars`
-
-### Code
-
-```{r ex, message = FALSE}
 library(dplyr)
 library(random.cdisc.data)
 library(nestcolor)
@@ -92,23 +76,3 @@ app <- init(
 if (Sys.getenv("QUARTO_ROOT") == "") {
   shinyApp(app$ui, app$server)
 }
-```
-
-```{r save_script, include = FALSE}
-code <- paste0(knitr::knit_code$get("ex"), collapse = "\n")
-writeLines(code, "scripts/exercise_2.R")
-```
-
-### URL
-
-```{r shinylive_url, echo = FALSE, results = 'asis', purl = FALSE}
-code <- paste0(knitr::knit_code$get("ex"), collapse = "\n")
-url <- roxy.shinylive::create_shinylive_url(code)
-cat(sprintf("[Open in Shinylive](%s)\n\n", url))
-```
-
-### App
-
-```{r shinylive_iframe, echo = FALSE, out.width = '150%', purl = FALSE}
-knitr::include_url(url, height = "800px")
-```

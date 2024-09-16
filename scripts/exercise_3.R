@@ -1,18 +1,3 @@
----
-title: "Exercise 3"
----
-
-Create your custom module!
-
-Create a custom module that does a simple demographic summary table on user specified columns.
-
-- read [`teal::module()`](https://insightsengineering.github.io/teal/latest-tag/reference/teal_modules.html) documentation
-- read ["Creating Custom Modules"](https://insightsengineering.github.io/teal/latest-tag/articles/creating-custom-modules.html) vignette
-- read [`"qenv"`](https://insightsengineering.github.io/teal.code/latest-tag/articles/qenv.html) article on how to interact with internal `qenv` object - in particular: [`teal.code::within()`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html) function
-
-### Code
-
-```{r ex, message = FALSE}
 library(random.cdisc.data)
 library(teal)
 library(teal.transform)
@@ -119,23 +104,3 @@ app <- init(
 if (Sys.getenv("QUARTO_ROOT") == "") {
   shinyApp(app$ui, app$server)
 }
-```
-
-```{r save_script, include = FALSE}
-code <- paste0(knitr::knit_code$get("ex"), collapse = "\n")
-writeLines(code, "scripts/exercise_3.R")
-```
-
-### URL
-
-```{r shinylive_url, echo = FALSE, results = 'asis', purl = FALSE}
-code <- paste0(knitr::knit_code$get("ex"), collapse = "\n")
-url <- roxy.shinylive::create_shinylive_url(code)
-cat(sprintf("[Open in Shinylive](%s)\n\n", url))
-```
-
-### App
-
-```{r shinylive_iframe, echo = FALSE, out.width = '150%', purl = FALSE}
-knitr::include_url(url, height = "800px")
-```

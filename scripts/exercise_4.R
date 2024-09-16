@@ -1,20 +1,6 @@
----
-title: "Exercise 3"
----
-
-Create your custom module!
-
-Create a custom module that does a simple demographic summary table on user specified columns.
-
-- read [`teal::module()`](https://insightsengineering.github.io/teal/latest-tag/reference/teal_modules.html) documentation
-- read ["Creating Custom Modules"](https://insightsengineering.github.io/teal/latest-tag/articles/creating-custom-modules.html) vignette
-- read [`"qenv"`](https://insightsengineering.github.io/teal.code/latest-tag/articles/qenv.html) article on how to interact with internal `qenv` object - in particular: [`teal.code::within()`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html) function
-
-### Code
-
-```{r ex, message = FALSE}
 library(random.cdisc.data)
 library(teal)
+library(teal.reporter)
 library(teal.transform)
 library(teal.widgets)
 library(tern)
@@ -23,7 +9,7 @@ library(dplyr)
 modules <- list(
   module(
     label = "Adhoc module",
-    server = function(id, data){
+    server = function(id, data, reporter, filter_panel_api){
       moduleServer(id, function(input, output, session){
         s_summary <- function(x) {
           if (is.numeric(x)) {
@@ -71,6 +57,41 @@ modules <- list(
           renderPrint(table_q()[["summary_tbl"]])
         })
 
+        # ----------
+        # reproducibility
+        # ----------
+        observeEvent(input$src, {
+          showModal(
+            ui = modalDialog(
+              title = "Reproducible R code",
+              tags$pre(
+                get_code(table_q())
+              )
+            ),
+            session = session
+          )
+        })
+
+        # ----------
+        # reporter
+        # ----------
+        simple_reporter_srv(
+          "simple_reporter",
+          reporter = reporter,
+          card_fun = function(card = TealReportCard$new(), comment) {
+            card$set_name("Patient demographics")
+            card$append_text(toString(table_q()[["summary_tbl"]]), "verbatim")
+            card$append_fs(filter_panel_api$get_filter_state())
+            card$append_encodings(list(param = input$param))
+            if (!comment == "") {
+              card$append_text("Comment", "header3")
+              card$append_text(comment)
+            }
+            card$append_src(get_code(table_q()))
+            card
+          }
+        )
+
       })
     },
     ui = function(id) {
@@ -78,15 +99,14 @@ modules <- list(
 
       standard_layout(
         output = div(
-          fluidRow(
-            column(
-              width = 12,
-              br(), hr(),
-              uiOutput(ns("table"))
-            )
-          )
+          fluidRow(column(
+            width = 12,
+            br(), hr(),
+            uiOutput(ns("table"))
+          ))
         ),
         encoding = div(
+          simple_reporter_ui(ns("simple_reporter")),
           br(),
           tags$label('Encodings', class = 'text-primary'),
           helpText('Analysis Data:', tags$code('ADSL')),
@@ -96,6 +116,12 @@ modules <- list(
             choices = NULL,
             selected = NULL,
             multiple = TRUE
+          ),
+          hr(),
+          actionButton(
+            inputId = ns("src"),
+            label = "Show R code",
+            width = "100%"
           )
         )
       )
@@ -119,23 +145,3 @@ app <- init(
 if (Sys.getenv("QUARTO_ROOT") == "") {
   shinyApp(app$ui, app$server)
 }
-```
-
-```{r save_script, include = FALSE}
-code <- paste0(knitr::knit_code$get("ex"), collapse = "\n")
-writeLines(code, "scripts/exercise_3.R")
-```
-
-### URL
-
-```{r shinylive_url, echo = FALSE, results = 'asis', purl = FALSE}
-code <- paste0(knitr::knit_code$get("ex"), collapse = "\n")
-url <- roxy.shinylive::create_shinylive_url(code)
-cat(sprintf("[Open in Shinylive](%s)\n\n", url))
-```
-
-### App
-
-```{r shinylive_iframe, echo = FALSE, out.width = '150%', purl = FALSE}
-knitr::include_url(url, height = "800px")
-```

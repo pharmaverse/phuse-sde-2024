@@ -49,9 +49,14 @@ if (Sys.getenv("QUARTO_ROOT") == "") {
 }
 ```
 
+```{r save_script, include = FALSE}
+code <- paste0(knitr::knit_code$get("ex"), collapse = "\n")
+writeLines(code, "scripts/exercise_1.R")
+```
+
 ### URL
 
-```{r shinylive_url, echo = FALSE, results = 'asis'}
+```{r shinylive_url, echo = FALSE, results = 'asis', purl = FALSE}
 code <- paste0(knitr::knit_code$get("ex"), collapse = "\n")
 url <- roxy.shinylive::create_shinylive_url(code)
 cat(sprintf("[Open in Shinylive](%s)\n\n", url))
@@ -59,6 +64,6 @@ cat(sprintf("[Open in Shinylive](%s)\n\n", url))
 
 ### App
 
-```{r shinylive_iframe, echo = FALSE, out.width = '150%'}
+```{r shinylive_iframe, echo = FALSE, out.width = '150%', purl = FALSE}
 knitr::include_url(url, height = "800px")
 ```
