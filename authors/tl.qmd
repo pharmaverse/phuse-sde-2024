@@ -5,7 +5,9 @@ about:
 
 ![](/assets/images/tl.png){width=10em class="rounded-circle"}
 
-## Tadeusz Lewandowski joind J&J in 2022 as a Data Engineering Head amd from 2023 is also leading the Open Source group
+## Tadeusz Lewandowski
+
+Tadeusz joind J&J in 2022 as a Data Engineering Head amd from 2023 is also leading the Open Source group.
 
 ```{=html}
 <hr class="about-sep" style="display: inline-flex;">

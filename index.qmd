@@ -7,3 +7,32 @@ Welcome in the PHUSE Single Day Event!
 ## Agenda
 
 TODO
+
+## Packages used:
+
+[![](https://github.com/insightsengineering/hex-stickers/blob/main/PNG/teal.png?raw=true){width=150}](https://insightsengineering.github.io/teal/)
+`teal` - Shiny-based interactive exploration framework for analyzing data
+
+[![](https://github.com/insightsengineering/hex-stickers/blob/main/PNG/tern.png?raw=true){width=150}](https://insightsengineering.github.io/tern/)
+`tern` - Table, Listings, and Graphs (TLG) library for common outputs used in clinical trials
+
+[![](https://github.com/insightsengineering/hex-stickers/blob/main/PNG/rtables.png?raw=true){width=150}](https://insightsengineering.github.io/rtables/)
+`rtables` - Reporting tables with R
+
+`random.cdisc.data` - Create random CDISC data
+
+`teal.modules.general` - General Purpose Teal Modules
+
+`teal.modules.clinical` - Provides teal modules for the standard clinical trials outputs
+
+## Further reads:
+
+* [Getting started with `teal`](https://insightsengineering.github.io/teal/latest-tag/articles/getting-started-with-teal.html)
+
+* [`teal` Technical Blueprint](https://insightsengineering.github.io/teal/latest-tag/articles/blueprint/index.html) - for developers or advanced users
+
+* [`teal` gallery](https://insightsengineering.github.io/teal.gallery/) - A gallery of sample apps based on the `teal` framework.
+
+* [TLG Catalog](https://insightsengineering.github.io/tlg-catalog/) - A catalog of Tables, Listings and Graphs (TLGs) created with NEST R packages
+
+* [`pharmaverse`](https://pharmaverse.org/) - Packages for clinical reporting workflows
