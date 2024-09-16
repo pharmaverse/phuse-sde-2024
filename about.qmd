@@ -13,3 +13,7 @@ title: "About"
 ----
 
 {{< include authors/kt.qmd >}}
+
+----
+
+{{< include authors/pe.qmd >}}

@@ -1,0 +1,25 @@
+---
+about:
+  template: jolla
+---
+
+![](/assets/images/pe.png){width=10em class="rounded-circle"}
+
+## Peyman Eshghi
+
+Peyman Eshghi is a Data Scientist with over 16 years of experience, currently serving as the Technical Lead at Johnson & Johnson in the UK. Specializing in R programming, he leads interactive data visualization projects using R and Shiny and is the appointed product owner of the teal framework at Johnson & Johnson.
+
+```{=html}
+<hr class="about-sep" style="display: inline-flex;">
+<br>
+<div class="about-links" style="display: inline-flex;">
+  <a href="https://www.linkedin.com/in/peyman-eshghi/" class="about-link">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">Linkedin</span>
+  </a>
+  <a href="https://github.com/peymaneshghi" class="about-link">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+</div>
+```
