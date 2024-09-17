@@ -109,6 +109,6 @@ cat(sprintf("[Open in Shinylive](%s)\n\n", url))
 
 ### App
 
-```{r shinylive_iframe, echo = FALSE, out.width = '150%', purl = FALSE}
+```{r shinylive_iframe, echo = FALSE, out.width = '150%', out.extra = 'style = "position: relative; z-index:1"', purl = FALSE}
 knitr::include_url(url, height = "800px")
 ```
