@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.41">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5027bf1c1f92ac6615724d89c8213d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5c67a7444eebc356e54fdce0a63e8750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -346,16 +346,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">within</span>(data, {</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>  ADSL <span class="ot">&lt;-</span> <span class="fu">radsl</span>(<span class="at">cached =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="fu">datanames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ADSL"</span>)</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="fu">init</span>(</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> modules</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_ROOT"</span>) <span class="sc">==</span> <span class="st">""</span>) {</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shinyApp</span>(app<span class="sc">$</span>ui, app<span class="sc">$</span>server)</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="fu">datanames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ADSL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `datanames&lt;-()` was deprecated in teal.data 0.7.0.
+ℹ invalid to use `datanames()&lt;-` or `names()&lt;-` on an object of class
+  `teal_data`. See ?names.teal_data</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="fu">init</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> modules</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_ROOT"</span>) <span class="sc">==</span> <span class="st">""</span>) {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shinyApp</span>(app<span class="sc">$</span>ui, app<span class="sc">$</span>server)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="url" class="level3">

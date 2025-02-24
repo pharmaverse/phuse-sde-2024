@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.41">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5027bf1c1f92ac6615724d89c8213d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5c67a7444eebc356e54fdce0a63e8750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -227,71 +227,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># set datanames</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>datanames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ADSL"</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">datanames</span>(data) <span class="ot">&lt;-</span> datanames</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># set join_keys</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">join_keys</span>(data) <span class="ot">&lt;-</span> default_cdisc_join_keys[datanames]</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Reusable Configuration For Modules</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>ADSL <span class="ot">&lt;-</span> data[[<span class="st">"ADSL"</span>]]</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>arm_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ARMCD"</span>, <span class="st">"ARM"</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>cs_arm_var <span class="ot">&lt;-</span> <span class="fu">choices_selected</span>(</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">choices =</span> <span class="fu">variable_choices</span>(ADSL, <span class="at">subset =</span> arm_vars),</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected =</span> <span class="st">"ARM"</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>date_vars_asl <span class="ot">&lt;-</span> <span class="fu">names</span>(ADSL)[<span class="fu">vapply</span>(ADSL, <span class="cf">function</span>(x) <span class="fu">inherits</span>(x, <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="st">"POSIXct"</span>, <span class="st">"POSIXlt"</span>)), <span class="fu">logical</span>(<span class="dv">1</span>))]</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>demog_vars_asl <span class="ot">&lt;-</span> <span class="fu">names</span>(ADSL)[<span class="sc">!</span>(<span class="fu">names</span>(ADSL) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"USUBJID"</span>, <span class="st">"STUDYID"</span>, date_vars_asl))]</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>header <span class="ot">&lt;-</span> tags<span class="sc">$</span><span class="fu">span</span>(</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">"display: flex; align-items: center; justify-content: space-between; margin: 10px 0 10px 0;"</span>,</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">span</span>(<span class="st">"Exercise 1"</span>, <span class="at">style =</span> <span class="st">"font-size: 30px;"</span>),</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>footer <span class="ot">&lt;-</span> tags<span class="sc">$</span><span class="fu">p</span>(</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="st">"This teal app is brought to you by PhUSE SDE Basel"</span>,</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="fu">init</span>(</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">modules</span>(</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_front_page</span>(</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">"App Info"</span>,</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      <span class="at">header_text =</span> <span class="fu">c</span>(</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Info about input data source"</span> <span class="ot">=</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>          <span class="st">"This app uses CDISC ADaM datasets randomly generated by `random.cdisc.data` R packages"</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">tables =</span> <span class="fu">list</span>(<span class="st">`</span><span class="at">NEST packages used in this demo app</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        <span class="at">Packages =</span> <span class="fu">c</span>(<span class="st">"teal.modules.general"</span>, <span class="st">"teal.modules.clinical"</span>, <span class="st">"random.cdisc.data"</span>)</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      ))</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_data_table</span>(<span class="st">"Data Table"</span>),</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_t_summary</span>(</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">"Demographic Table"</span>,</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataname =</span> <span class="st">"ADSL"</span>,</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      <span class="at">arm_var =</span> cs_arm_var,</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      <span class="at">summarize_vars =</span> <span class="fu">choices_selected</span>(</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">choices =</span> <span class="fu">variable_choices</span>(ADSL, demog_vars_asl),</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"SEX"</span>, <span class="st">"AGE"</span>, <span class="st">"RACE"</span>)</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">build_app_title</span>(<span class="st">"Basic Teal Demo App"</span>),</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  <span class="at">header =</span> header,</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">footer =</span> footer</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[INFO] 2025-01-28 10:33:25.0719 pid:8013 token:[] teal.modules.general Initializing tm_front_page
-[INFO] 2025-01-28 10:33:25.0748 pid:8013 token:[] teal.modules.general Initializing tm_data_table</code></pre>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">datanames</span>(data) <span class="ot">&lt;-</span> datanames</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `datanames&lt;-()` was deprecated in teal.data 0.7.0.
+ℹ invalid to use `datanames()&lt;-` or `names()&lt;-` on an object of class
+  `teal_data`. See ?names.teal_data</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_ROOT"</span>) <span class="sc">==</span> <span class="st">""</span>) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shinyApp</span>(app<span class="sc">$</span>ui, app<span class="sc">$</span>server)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set join_keys</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">join_keys</span>(data) <span class="ot">&lt;-</span> default_cdisc_join_keys[datanames]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Reusable Configuration For Modules</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ADSL <span class="ot">&lt;-</span> data[[<span class="st">"ADSL"</span>]]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>arm_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ARMCD"</span>, <span class="st">"ARM"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>cs_arm_var <span class="ot">&lt;-</span> <span class="fu">choices_selected</span>(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">choices =</span> <span class="fu">variable_choices</span>(ADSL, <span class="at">subset =</span> arm_vars),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected =</span> <span class="st">"ARM"</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>date_vars_asl <span class="ot">&lt;-</span> <span class="fu">names</span>(ADSL)[<span class="fu">vapply</span>(ADSL, <span class="cf">function</span>(x) <span class="fu">inherits</span>(x, <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="st">"POSIXct"</span>, <span class="st">"POSIXlt"</span>)), <span class="fu">logical</span>(<span class="dv">1</span>))]</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>demog_vars_asl <span class="ot">&lt;-</span> <span class="fu">names</span>(ADSL)[<span class="sc">!</span>(<span class="fu">names</span>(ADSL) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"USUBJID"</span>, <span class="st">"STUDYID"</span>, date_vars_asl))]</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>header <span class="ot">&lt;-</span> tags<span class="sc">$</span><span class="fu">span</span>(</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">"display: flex; align-items: center; justify-content: space-between; margin: 10px 0 10px 0;"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">span</span>(<span class="st">"Exercise 1"</span>, <span class="at">style =</span> <span class="st">"font-size: 30px;"</span>),</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>footer <span class="ot">&lt;-</span> tags<span class="sc">$</span><span class="fu">p</span>(</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">"This teal app is brought to you by PhUSE SDE Basel"</span>,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="fu">init</span>(</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">modules</span>(</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_front_page</span>(</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">"App Info"</span>,</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>      <span class="at">header_text =</span> <span class="fu">c</span>(</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Info about input data source"</span> <span class="ot">=</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>          <span class="st">"This app uses CDISC ADaM datasets randomly generated by `random.cdisc.data` R packages"</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">tables =</span> <span class="fu">list</span>(<span class="st">`</span><span class="at">NEST packages used in this demo app</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">Packages =</span> <span class="fu">c</span>(<span class="st">"teal.modules.general"</span>, <span class="st">"teal.modules.clinical"</span>, <span class="st">"random.cdisc.data"</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>      ))</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_data_table</span>(<span class="st">"Data Table"</span>),</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_t_summary</span>(</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="st">"Demographic Table"</span>,</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataname =</span> <span class="st">"ADSL"</span>,</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">arm_var =</span> cs_arm_var,</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">summarize_vars =</span> <span class="fu">choices_selected</span>(</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>        <span class="at">choices =</span> <span class="fu">variable_choices</span>(ADSL, demog_vars_asl),</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"SEX"</span>, <span class="st">"AGE"</span>, <span class="st">"RACE"</span>)</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">build_app_title</span>(<span class="st">"Basic Teal Demo App"</span>),</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">header =</span> header,</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">footer =</span> footer</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[INFO] 2025-02-24 10:37:55.7139 pid:8244 token:[] teal.modules.general Initializing tm_front_page
+[INFO] 2025-02-24 10:37:55.7163 pid:8244 token:[] teal.modules.general Initializing tm_data_table</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `build_app_title()` was deprecated in teal 0.16.0.
+ℹ Use `modify_title()` on the object created using the `init`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `title` argument of `init()` is deprecated as of teal 0.16.0.
+ℹ Use `modify_title()` on the teal app object instead. See ?modify_title for
+  examples and more details.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `header` argument of `init()` is deprecated as of teal 0.16.0.
+ℹ Use `modify_header()` on the teal app object instead. See ?modify_header for
+  examples and more details.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `footer` argument of `init()` is deprecated as of teal 0.16.0.
+ℹ Use `modify_footer()` on the teal app object instead. See ?modify_footer for
+  examples and more details.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_ROOT"</span>) <span class="sc">==</span> <span class="st">""</span>) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shinyApp</span>(app<span class="sc">$</span>ui, app<span class="sc">$</span>server)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="url" class="level3">

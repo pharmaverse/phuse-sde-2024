@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.41">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5027bf1c1f92ac6615724d89c8213d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5c67a7444eebc356e54fdce0a63e8750.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -215,33 +215,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set datanames</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>datanames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ADSL"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">datanames</span>(data) <span class="ot">&lt;-</span> datanames</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Reusable Configuration For Modules</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ADSL <span class="ot">&lt;-</span> data[[<span class="st">"ADSL"</span>]]</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>header <span class="ot">&lt;-</span> tags<span class="sc">$</span><span class="fu">span</span>(</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">"display: flex; align-items: center; justify-content: space-between; margin: 10px 0 10px 0;"</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">span</span>(<span class="st">"Excercise 1"</span>, <span class="at">style =</span> <span class="st">"font-size: 30px;"</span>),</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>footer <span class="ot">&lt;-</span> tags<span class="sc">$</span><span class="fu">p</span>(</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"This teal app is brought to you by PhUSE SDE Basel."</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="fu">init</span>(</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">modules</span>(</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">example_module</span>()</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">build_app_title</span>(<span class="st">"Basic Teal Demo App"</span>),</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">header =</span> header,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">footer =</span> footer</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_ROOT"</span>) <span class="sc">==</span> <span class="st">""</span>) {</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shinyApp</span>(app<span class="sc">$</span>ui, app<span class="sc">$</span>server)</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">datanames</span>(data) <span class="ot">&lt;-</span> datanames</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `datanames&lt;-()` was deprecated in teal.data 0.7.0.
+ℹ invalid to use `datanames()&lt;-` or `names()&lt;-` on an object of class
+  `teal_data`. See ?names.teal_data</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Reusable Configuration For Modules</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ADSL <span class="ot">&lt;-</span> data[[<span class="st">"ADSL"</span>]]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>header <span class="ot">&lt;-</span> tags<span class="sc">$</span><span class="fu">span</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">"display: flex; align-items: center; justify-content: space-between; margin: 10px 0 10px 0;"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">span</span>(<span class="st">"Excercise 1"</span>, <span class="at">style =</span> <span class="st">"font-size: 30px;"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>footer <span class="ot">&lt;-</span> tags<span class="sc">$</span><span class="fu">p</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"This teal app is brought to you by PhUSE SDE Basel."</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="fu">init</span>(</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">modules</span>(</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">example_module</span>()</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="fu">build_app_title</span>(<span class="st">"Basic Teal Demo App"</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">header =</span> header,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">footer =</span> footer</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `build_app_title()` was deprecated in teal 0.16.0.
+ℹ Use `modify_title()` on the object created using the `init`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `title` argument of `init()` is deprecated as of teal 0.16.0.
+ℹ Use `modify_title()` on the teal app object instead. See ?modify_title for
+  examples and more details.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `header` argument of `init()` is deprecated as of teal 0.16.0.
+ℹ Use `modify_header()` on the teal app object instead. See ?modify_header for
+  examples and more details.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `footer` argument of `init()` is deprecated as of teal 0.16.0.
+ℹ Use `modify_footer()` on the teal app object instead. See ?modify_footer for
+  examples and more details.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_ROOT"</span>) <span class="sc">==</span> <span class="st">""</span>) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shinyApp</span>(app<span class="sc">$</span>ui, app<span class="sc">$</span>server)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="url" class="level3">
