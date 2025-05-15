@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pharmaverse.github.io/examples/authors/template.html</loc>
-    <lastmod>2025-05-14T10:35:49.952Z</lastmod>
-  </url>
-  <url>
     <loc>https://pharmaverse.github.io/examples/authors/pe.html</loc>
-    <lastmod>2025-05-14T10:35:49.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/authors/tl.html</loc>
-    <lastmod>2025-05-14T10:35:49.952Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/exercise_1.html</loc>
-    <lastmod>2025-05-14T10:35:49.952Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/index.html</loc>
-    <lastmod>2025-05-14T10:35:49.952Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/exercise_4.html</loc>
-    <lastmod>2025-05-14T10:35:49.952Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/exercise_3.html</loc>
-    <lastmod>2025-05-14T10:35:49.952Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/exercise_2.html</loc>
-    <lastmod>2025-05-14T10:35:49.952Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/about.html</loc>
-    <lastmod>2025-05-14T10:35:49.944Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/authors/pr.html</loc>
-    <lastmod>2025-05-14T10:35:49.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pharmaverse.github.io/examples/authors/la.html</loc>
-    <lastmod>2025-05-14T10:35:49.951Z</lastmod>
+    <lastmod>2025-05-15T10:36:43.041Z</lastmod>
   </url>
   <url>
     <loc>https://pharmaverse.github.io/examples/authors/kt.html</loc>
-    <lastmod>2025-05-14T10:35:49.951Z</lastmod>
+    <lastmod>2025-05-15T10:36:43.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/authors/template.html</loc>
+    <lastmod>2025-05-15T10:36:43.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/exercise_3.html</loc>
+    <lastmod>2025-05-15T10:36:43.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/exercise_1.html</loc>
+    <lastmod>2025-05-15T10:36:43.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/exercise_2.html</loc>
+    <lastmod>2025-05-15T10:36:43.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/about.html</loc>
+    <lastmod>2025-05-15T10:36:43.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/exercise_4.html</loc>
+    <lastmod>2025-05-15T10:36:43.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/index.html</loc>
+    <lastmod>2025-05-15T10:36:43.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/authors/tl.html</loc>
+    <lastmod>2025-05-15T10:36:43.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/authors/pr.html</loc>
+    <lastmod>2025-05-15T10:36:43.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pharmaverse.github.io/examples/authors/la.html</loc>
+    <lastmod>2025-05-15T10:36:43.041Z</lastmod>
   </url>
 </urlset>
